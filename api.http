@@ -1,0 +1,6 @@
+POST http://localhost:8000/api/auth/register
+Content-Type: application/x-www-form-urlencoded
+
+name=99&telephone=78978978911&password=1322132213221322
+
+###

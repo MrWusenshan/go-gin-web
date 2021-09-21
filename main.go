@@ -1,19 +1,13 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	_ "go-gin-web/common"
+	"go-gin-web/routers"
 )
 
 func main() {
 	app := gin.Default()
-	app.GET("/ping", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"code":    200,
-			"message": "pang",
-		})
-	})
+	routers.User(app)
 	panic(app.Run(":8000"))
 }
