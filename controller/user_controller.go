@@ -7,6 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"go-gin-web/common"
+	"go-gin-web/dto"
 	"go-gin-web/models"
 	"go-gin-web/utils"
 	"gorm.io/gorm"
@@ -120,7 +121,7 @@ func UserInfo(ctx *gin.Context) {
 	user, _ := ctx.Get("user")
 	ctx.JSON(http.StatusOK, gin.H{
 		"code":    200,
-		"data":    gin.H{"user": user},
+		"data":    gin.H{"user": dto.ToUserDto(user.(models.User))},
 		"message": "success!",
 	})
 }
