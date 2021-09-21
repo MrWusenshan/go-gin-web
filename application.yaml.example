@@ -1,0 +1,11 @@
+
+## 数据库配置
+database:
+  postgresql:
+    host: "localhost"
+    user: "postgres"
+    password: "root"
+    dbname: "gin_web"
+    port: "5432"
+    sslmodel: "disable"
+    timezone: "Asia/Shanghai"
