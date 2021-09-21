@@ -1,3 +1,12 @@
+## 应用监听端口
+server:
+  mode: "debug"
+#  mode: "release"
+  port: ":8000"
+
+## jwt 密钥
+jwt:
+  key: "my_jwt_key"
 
 ## 数据库配置
 database:

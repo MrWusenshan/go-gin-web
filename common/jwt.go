@@ -4,10 +4,11 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
+	"github.com/spf13/viper"
 	"go-gin-web/models"
 )
 
-var jwtKey = []byte("my_jwt_key")
+var jwtKey = []byte(viper.GetString("jwt.key"))
 
 type Claims struct {
 	UserId uint
