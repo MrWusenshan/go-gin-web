@@ -1,3 +1,5 @@
+GET http://localhost:8000/api/auth/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjUsImV4cCI6MTYzMjgxNzQxMSwiaWF0IjoxNjMyMjEyNjExLCJpc3MiOiJ3c3MiLCJzdWIiOiJ1c2VyIHRva2VuIn0.fuAWWQMkB3YrqYDKydFRxJgQBxbB3n-BvlMKw_KZTE4
 ### 登录接口
 POST http://localhost:8000/api/auth/login
 Content-Type: application/x-www-form-urlencoded

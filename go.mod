@@ -3,6 +3,7 @@ module go-gin-web
 go 1.17
 
 require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.7.4
 	github.com/spf13/viper v1.9.0
 	gorm.io/driver/postgres v1.1.1

@@ -2,6 +2,7 @@ package controller
 
 import (
 	"crypto/bcrypt"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -96,7 +97,15 @@ func UserLogin(ctx *gin.Context) {
 		return
 	}
 
-	token := 1111
+	token, err := common.ReleaseToken(user)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{
+			"code":    500,
+			"message": "系统出错!",
+		})
+		log.Printf("token generate err: %v", err)
+		return
+	}
 
 	ctx.JSON(http.StatusOK, gin.H{
 		"code": 200,
@@ -104,6 +113,15 @@ func UserLogin(ctx *gin.Context) {
 			"token": token,
 		},
 		"message": "登录成功!",
+	})
+}
+
+func UserInfo(ctx *gin.Context) {
+	user, _ := ctx.Get("user")
+	ctx.JSON(http.StatusOK, gin.H{
+		"code":    200,
+		"data":    gin.H{"user": user},
+		"message": "success!",
 	})
 }
 
